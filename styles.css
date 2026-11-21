@@ -1,0 +1,85 @@
+:root {
+  --bg: #ffffff;
+  --text: #1c1f26;
+  --muted: #5b6270;
+  --brand: #3b5bdb;
+  --brand-dark: #2f49b3;
+  --soft: #f3f5fb;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+/* Nav */
+.nav { border-bottom: 1px solid #e6e8ee; position: sticky; top: 0; background: rgba(255,255,255,.95); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-weight: 700; font-size: 1.25rem; color: var(--brand); text-decoration: none; }
+.nav nav { display: flex; gap: 20px; align-items: center; }
+.nav nav a { color: var(--muted); text-decoration: none; }
+.nav nav a:hover { color: var(--text); }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff !important;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: var(--brand-dark); }
+.btn-small { padding: 8px 14px; }
+.btn-ghost { background: transparent; color: var(--brand) !important; border: 1px solid var(--brand); }
+.btn-ghost:hover { background: var(--soft); }
+
+/* Hero */
+.hero { padding: 96px 0 72px; text-align: center; background: linear-gradient(180deg, var(--soft), #fff); }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.15; margin: 0 auto 16px; max-width: 760px; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; }
+.hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* Features */
+.features { padding: 72px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.card { background: var(--soft); padding: 24px; border-radius: var(--radius); }
+.card h3 { margin-top: 0; }
+.card p { color: var(--muted); margin-bottom: 0; }
+
+/* Pricing */
+.pricing { padding: 72px 0; text-align: center; border-top: 1px solid #e6e8ee; }
+.price span { font-size: 3rem; font-weight: 700; color: var(--brand); }
+
+/* Signup */
+.signup { padding: 72px 0 96px; text-align: center; background: var(--soft); }
+.signup-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+.signup-form input {
+  padding: 12px 14px; min-width: 280px; font: inherit;
+  border: 1px solid #ccd1dc; border-radius: var(--radius);
+}
+.signup-msg { min-height: 1.6em; color: var(--brand-dark); font-weight: 600; }
+
+/* Footer */
+.footer { padding: 24px 0; text-align: center; color: var(--muted); font-size: .9rem; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .nav nav a:not(.btn) { display: none; }
+}
